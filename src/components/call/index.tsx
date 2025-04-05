@@ -177,6 +177,7 @@ function Call({ interview }: InterviewProps) {
       }
       //TODO: highlight the newly uttered word in the UI
     });
+    
     return () => {
       // Clean up event listeners
       webClient.removeAllListeners();
