@@ -20,14 +20,18 @@ export async function POST(req: Request) {
       );
     }
 
+    // Configure Azure OpenAI client
     const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: process.env.AZURE_OPENAI_API_KEY || "",
+      baseURL: `${process.env.AZURE_OPENAI_ENDPOINT}/openai/deployments/${process.env.AZURE_OPENAI_DEPLOYMENT_NAME || "gpt-4o-mini"}`,
+      defaultQuery: { "api-version": "2024-08-01-preview" },
+      defaultHeaders: { "api-key": process.env.AZURE_OPENAI_API_KEY },
       maxRetries: 5,
       dangerouslyAllowBrowser: true,
     });
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: process.env.AZURE_OPENAI_DEPLOYMENT_NAME || "gpt-4o-mini",
       messages: [
         {
           role: "system",

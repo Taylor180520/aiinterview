@@ -67,7 +67,7 @@ function QuestionsPopup({ interviewData, setProceed, setOpen }: Props) {
   const onSave = async () => {
     try {
       interviewData.user_id = user?.id || "";
-      interviewData.organization_id = organization?.id || "";
+      interviewData.organization_id = organization?.id || user?.id || "default";
 
       interviewData.questions = questions;
       interviewData.description = description;

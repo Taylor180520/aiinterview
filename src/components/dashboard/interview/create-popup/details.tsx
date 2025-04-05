@@ -310,7 +310,7 @@ function DetailsPopup({
                 objective &&
                 numQuestions &&
                 duration &&
-                selectedInterviewer != BigInt(0)
+                selectedInterviewer
                   ? false
                   : true) || isClicked
               }
@@ -328,7 +328,7 @@ function DetailsPopup({
                 objective &&
                 numQuestions &&
                 duration &&
-                selectedInterviewer != BigInt(0)
+                selectedInterviewer
                   ? false
                   : true) || isClicked
               }
