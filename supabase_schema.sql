@@ -54,7 +54,7 @@ CREATE TABLE interview (
     respondents TEXT[],
     question_count INTEGER,
     response_count INTEGER,
-    time_duration TEXT
+    time_ TEXT
 );
 
 CREATE TABLE response (
@@ -65,7 +65,7 @@ CREATE TABLE response (
     email TEXT,
     call_id TEXT,
     candidate_status TEXT,
-    duration INTEGER,
+     INTEGER,
     details JSONB,
     analytics JSONB,
     is_analysed BOOLEAN DEFAULT false,

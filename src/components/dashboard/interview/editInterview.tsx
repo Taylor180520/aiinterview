@@ -340,8 +340,8 @@ function EditInterview({ interview }: EditInterviewProps) {
                   value === "" ||
                   (Number.isInteger(Number(value)) && Number(value) > 0)
                 ) {
-                  if (Number(value) > 10) {
-                    value = "10";
+                  if (Number(value) > 30) {
+                    value = "30";
                   }
                   setDuration(Number(value));
                 }
